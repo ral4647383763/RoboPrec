@@ -8,7 +8,6 @@ This document provides instructions on how to set up the environment and run the
 
 You must have **Docker** installed on your system to run these experiments.
 
----
 
 ## **Getting Started**
 
