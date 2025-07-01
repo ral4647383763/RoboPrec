@@ -96,7 +96,7 @@ To generate the code for all algorithms and robots presented in the paper, follo
     The plot will be in `/quanta/plots/`
 
 5. **Running benchmarks**
-    To run the benchmarks, see `tests/{algorithm}/{robot}/benchmark.cpp` files. To run them, first install Google Benchmark library, then compile the benchmark files with:
+    To run the benchmarks, see `quanta/tests/{algorithm}/{robot}/benchmark.cpp` files. To run them, first install Google Benchmark library, then compile the benchmark files with:
     ```bash
     g++ benchmark.cpp -std=c++17 -isystem ../../../../benchmark/include -L../../../../benchmark/build/src -lbenchmark -lpthread -o benchmark -O3 && ./benchmark
     ```
