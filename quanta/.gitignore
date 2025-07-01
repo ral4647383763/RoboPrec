@@ -1,0 +1,13 @@
+# These three lines ignores all files without an extension
+*
+!*/
+!*.*
+
+
+# Rest
+/target
+data/**
+generated/**
+.vscode/**
+bin/**
+
