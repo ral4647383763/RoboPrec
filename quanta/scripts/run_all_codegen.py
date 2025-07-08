@@ -6,9 +6,9 @@ os.system("cargo install --path . --root .")
 
 # Then, 
 #dofs = [4, 5, 6, 7]
-#algorithms = ["forward-kinematics", "rnea", "rnea-derivatives"]
+algorithms = ["forward-kinematics", "rnea", "rnea-derivatives"]
 dofs = [4, 5, 6, 7]
-algorithms = ["rnea-derivatives"]
+#algorithms = ["rnea-derivatives"]
 
 
 # execute ./bin/quanta --dof {dof} --algorithm {algorithm} > {output_file}
