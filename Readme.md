@@ -40,7 +40,7 @@ Follow these steps to generate and analyze a single example.
     Open `main.rs` in an editor (e.g., `vim`, `nano`). The file is configured to run the paper experiments by default. To run a standalone example, comment out the `paper_tests();` line and uncomment one of the example lines (e.g., `ex1::run();`). The implementations for these examples can be found in `/quanta/src/examples/`.
 
 2.  **Generate Code/Apply Analysis**
-    Run:
+    Run in /quanta directory:
     ```bash
     python3 scripts/run_one_codegen.py {codegen_type} {precision}
     ```
