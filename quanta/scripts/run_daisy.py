@@ -152,6 +152,11 @@ print("algorithms: ", algorithms)
 if not os.path.exists('/daisy/output'):
     os.makedirs('../daisy/output')
 
+# remove /daisy/ranges.txt and ../daisy/errors.txt if they exist
+if os.path.exists('../daisy/ranges.txt'):
+    os.remove('../daisy/ranges.txt')
+if os.path.exists('../daisy/errors.txt'):
+    os.remove('../daisy/errors.txt')
 
 
 for algorithm_folder in algorithm_folders:
