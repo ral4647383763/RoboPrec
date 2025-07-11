@@ -10,36 +10,27 @@ import glob
 #precisions = ["Fixed16", "Fixed32", "Float32", "Float64"]
 
 # this is faster, it runs only the precisions that we know will work
-##### uniform_precisions = {
-#####     "forward_kinematics": {
-#####         "4dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed4-28"],
-#####         "5dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed5-27"],
-#####         "6dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed6-26"],
-#####         "7dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed7-25"]
-#####     },
-#####     "rnea": {
-#####         "4dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed6-26"],
-#####         "5dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed7-25"],
-#####         "6dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed13-19"],
-#####         "7dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed14-18"]
-#####     },
-#####     "rnea_derivatives": {
-#####         "4dof": ["Fixed16", "Fixed32", "Float32", "Float64"],
-#####         "5dof": [           "Fixed32", "Float32", "Float64"],
-#####         "6dof": [           "Fixed32", "Float32", "Float64"],
-#####         "7dof": [                      "Float32", "Float64"]
-#####     },
-##### }
-
 uniform_precisions = {
+    "forward_kinematics": {
+        "4dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed4-28"],
+        "5dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed5-27"],
+        "6dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed6-26"],
+        "7dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed7-25"]
+    },
+    "rnea": {
+        "4dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed6-26"],
+        "5dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed7-25"],
+        "6dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed13-19"],
+        "7dof": ["Fixed16", "Fixed32", "Float32", "Float64", "Fixed14-18"]
+    },
     "rnea_derivatives": {
-    #    "4dof": ["Fixed16", "Fixed32", "Float32", "Float64"],
-        "4dof": ["Fixed12-20"],
-    #    "5dof": [           "Fixed32", "Float32", "Float64"],
-    #    "6dof": [           "Fixed32", "Float32", "Float64"],
-    #    "7dof": [                      "Float32", "Float64"]
+        "4dof": ["Fixed16", "Fixed32", "Float32", "Float64"],
+        "5dof": [           "Fixed32", "Float32", "Float64"],
+        "6dof": [           "Fixed32", "Float32", "Float64"],
+        "7dof": [                      "Float32", "Float64"]
     },
 }
+
 
 def run_daisy(file_path, algorithm, dof, precision):
 
@@ -156,6 +147,11 @@ algorithm_folders = glob.glob('generated/Scala/*/')
 print("algorithm_folders: ", algorithm_folders)
 algorithms = [algorithm_folder.split('/')[-2] for algorithm_folder in algorithm_folders]
 print("algorithms: ", algorithms)
+
+# create /daisy/output if it does not exist
+if not os.path.exists('/daisy/output'):
+    os.makedirs('../daisy/output')
+
 
 
 for algorithm_folder in algorithm_folders:
