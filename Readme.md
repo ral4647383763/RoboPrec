@@ -91,7 +91,8 @@ To generate the code for all algorithms and robots presented in the paper, follo
     From the `/quanta` directory, execute:
     ```bash
     # Make sure you are in the /quanta directory
-    python3 scripts/bar_runtime_plot.py
+    python3 scripts/bar_runtime_plot_embedded.py
+    python3 scripts/bar_runtime_plot_nonembedded.py
     ```
     The plot will be in `/quanta/plots/`
 
